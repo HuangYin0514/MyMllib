@@ -1,0 +1,26 @@
+Created by Administrator on 2016-5-29.
+create table tbl_stock(
+orderid string,
+orderlocation string,
+dateid string
+)
+row format delimited
+fields terminated by ","
+lines terminated by "\n";
+
+
+create table tbl_stockdetail(
+orderid string,
+itmenum string,   //第几条
+itemid string,
+itemqty int,
+itemprice int,
+itemamout int
+)
+row format delimited
+fields terminated by ","
+lines terminated by "\n";
+
+LOAD DATA LOCAL INPATH '/home/hadoop/Stock.txt' INTO TABLE tbl_stock;
+LOAD DATA LOCAL INPATH '/home/hadoop/StockDetail.txt' INTO TABLE tbl_stockDetail;
+
